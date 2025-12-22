@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<nav class="navbar">
+  <p>Portfolio</p>
+  <a routerLink="/home"
+  routerLinkActive="active"
+  >Главная</a>
+  <a routerLink="/about"
+  routerLinkActive="active"
+  >Обо мне</a>
+  <a routerLink="/projects"
+  routerLinkActive="active"
+  >Проекты</a>
+  <a routerLink="/practic"
+  routerLinkActive="active"
+  >Практика</a>
+  <a routerLink="/self-dev"
+  routerLinkActive="active"
+  >Саоразвитие</a>
+  <a routerLink="/kurs"
+  routerLinkActive="active"
+  >Курсы</a>
+</nav>
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+  <footer>
+    <p>
+      <strong>© 2025 ЯНА, ГБПОУ МО «Люберецкий техникум имени Героя Советского Союза, лётчика–космонавта Ю.А. Гагарина»</strong>
+      Год: 2027 (год окончания обучения).
+      Ссылка на <a href="https://github.com/metyloran/pictures-resume.git">GitHub-репозиторий проекта</a>.
+      Ссылка на опубликованную версию (GitHub Pages).
+    </p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<div class="about">
+<h1>Практика в НЦВ миль и камов</h1>
+<div class="overlay" *ngIf="isCertificateOpen" (click)="closeCertificate()"></div>
+<p>Практика прошла хорошо: я работала в офисе с приятными людьми. Мне наливали кофе, я почувствовала себя настоящим работником и получила ценный опыт.
+    А в последний день мне даже сделали подарок —<a (click)="openCertificate()">
+   флешка 
+  </a> на 60 гб и кружка.
+</p>
+<a href="https://metyloran.github.io/practic-twine/" target="_blank">Небольшая интерактивная новелла о том, как я проходила практику.</a>
+</div>
+
+
+
+
+<div class="overlay" *ngIf="isCertificateOpen" (click)="closeCertificate()"></div>
+
+<!-- Окно с сертификатом -->
+<div class="modal" *ngIf="isCertificateOpen">
+  <button class="close" (click)="closeCertificate()"></button>
+
+  <img
+    src="https://github.com/metyloran/pictures-resume/blob/main/photo_2025-12-20_16-37-46.jpg?raw=true"
+    alt="флешка"/>
+    <a href="https://lms.yandex.ru/courses/1415/groups/48608"></a>
+</div>

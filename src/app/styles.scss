@@ -1,0 +1,19 @@
+:root {
+    --bg: #f4f4f4;
+    --card: #ffffff;
+    --text: #222;
+    --accent: #4a7aff;
+}
+
+body.dark-theme {
+    --bg: #1e1e1e;
+    --card: #2a2a2a;
+    --text: #eaeaea;
+    --accent: #6d9bff;
+}
+
+body {
+    background: var(--bg);
+    font-family: "Inter", sans-serif;
+    margin: 0;
+}

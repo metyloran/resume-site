@@ -1,0 +1,186 @@
+
+/* ===== БАЗА ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* ===== ЗАГОЛОВКИ ===== */
+h1 {
+    color: #f7ffd4;
+    font-size: clamp(28px, 5vw, 42px);
+}
+a {
+    text-decoration: underline;
+    color: #60a5fa;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.links {
+    margin-top: 200px;
+}
+
+a:hover {
+    color: #f1ffb1;
+    transform: scale(1.1);
+}
+
+/* ===== КОНТЕЙНЕР ===== */
+.about {
+    text-align: center;
+    max-width: 1100px;
+    padding: 20px;
+    margin: 0 auto;
+    color: #f7ffd4;
+    animation: fadeIn 1s;
+}
+
+.about p {
+    max-width: 900px;
+    margin: 20px auto;
+    font-size: clamp(16px, 2.5vw, 20px);
+    line-height: 1.5;
+}
+
+/* ===== СПИСОК КАРТОЧЕК ===== */
+.info {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 0;
+    margin: 40px 0;
+}
+
+/* ===== КАРТОЧКА ===== */
+.info li {
+    position: relative;
+    background-color: rgb(37, 61, 77);
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 240px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    box-shadow: 5px 5px 2px #60a5fa;
+    transition: all 0.3s ease;
+    animation: fadeIn 1s;
+}
+
+.info li:hover {
+    color: #e0d530;
+    background-color: rgb(13, 27, 39);
+    box-shadow:
+        0 0 5px rgb(81, 128, 146),
+        0 0 10px #60a5fa,
+        0 0 20px #60a5fa;
+}
+
+/* ===== ЗАГОЛОВОК КАРТОЧКИ ===== */
+.info li .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.info li img {
+    max-width: 80px;
+    height: auto;
+}
+
+/* ===== ТЕКСТ КАРТОЧКИ ===== */
+.info li .text {
+    position: absolute;
+    inset: 0;
+    padding: 20px;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.info li:hover .text {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.info li:hover .title {
+    opacity: 0;
+}
+
+/* ===== МЕНЮ ===== */
+.menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    gap: 10px;
+    box-shadow: 2px 2px 2px #60a5fa;
+    border-radius: 7px;
+    margin-top: 100px;
+}
+
+.menu a {
+    color: #60a5fa;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #f1ffb1;
+    transform: scale(1.1);
+}
+
+/* ===== АДАПТИВ ===== */
+
+/* Планшеты */
+@media (max-width: 1024px) {
+    .about p {
+        padding: 0 10px;
+    }
+    
+}
+
+/* Телефоны */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info li {
+        min-height: 220px;
+    }
+}
+
+/* Маленькие экраны */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 26px;
+    }
+
+    .info li img {
+        max-width: 60px;
+    }
+
+    .menu a {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,125 @@
+
+h1 {
+    display: flex;
+    font-size: 40px;
+    color: #f7ffd4;
+    padding: 0px;
+    justify-content: center;
+    margin: 30px;
+    width: max-content;
+    gap: unset;
+}
+
+.road div {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(37, 61, 77);
+    height: 100%;
+    max-width: 100%;
+    position: relative;
+    margin-bottom: 200px;
+    border-radius: 20px;
+    color: #f7ffd4;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    gap: 10px;
+    box-shadow: 15px 8px 2px #60a5fa;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+    animation: fadeIn 1s;
+    &:hover {
+            color:#e0d530;
+            box-shadow:
+                0 0 5px rgb(81, 128, 146),
+                0 0 10px #60a5fa,
+                0 0 20px #60a5fa,
+                0 0 30px #60a5fa,
+        }
+    p{
+        width: auto;
+        justify-content: center;
+        font-size: 30px;
+        
+        font-family: monospace;
+    }
+}
+@keyframes arrow-fall {
+    from {
+        transform: translateX(-50%) translateY(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(-50%) translateY(220px);
+        opacity: 1;
+    }
+}
+
+.road div::after {
+    content: "↓";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    font-size: 50px;
+    color: #60a5fa;
+    opacity: 0;
+}
+
+.road div:hover::after {
+    animation: arrow-fall 1.1s ease forwards;
+    
+}
+
+.road .step:last-child::after{
+    display: none;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 10;
+    }
+}
+.step{
+    position: relative;
+}
+
+.step .text{
+    position: absolute;
+        inset: 0;
+        /* занимает всю карточку */
+        padding: 30px;
+    
+        border-radius: 7px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        opacity: 0;
+        transform: translateY(20px);
+        pointer-events: none;
+    
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 3;
+}
+.step:hover .text{
+    opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+        border-radius: 20px;
+       
+}
+
+.step .title {
+    transition: opacity 0.3s ease;
+}
+
+/* при наведении — скрываем ВСЕ p внутри блока */
+.step:hover .title {
+    opacity: 0;
+    visibility: hidden;
+}
